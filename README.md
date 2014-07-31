@@ -7,9 +7,14 @@ I wrote this script primarily for my own personal use, but if any of my fellow b
 
 ~ Hawk
 
+Installation/Contents
+---------------------
 
-## Usage
+The script is `breadplan.py`. There are a couple dependencies (`docopt` and `tabulate`), which you can install using `pip install -r requirements.txt`. `Breadplan Science.ipynb` contains the IPython notebook I used to do a little stats to get average density values for assorted flours.
 
+
+Usage
+-----
 
 #### Commands
 
@@ -17,6 +22,8 @@ I wrote this script primarily for my own personal use, but if any of my fellow b
 + `breadplan.py baguette` generates a recipe for baguettes
 + `breadplan.py rye` generates a recipe for rye bread
 + `breadplan.py wholewheat` generates a recipe for whole-wheat bread
+
+Note that only Basic Country Bread is currently implemented; I'm working on the other recipes, though.
 
 #### Options
 
