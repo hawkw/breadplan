@@ -15,6 +15,7 @@ Options:
 """
 
 from docopt import docopt
+from tabulate import tabulate
 
 WATER           = 240 # Assume water has a density of 1 gram
 SALT            = 273
@@ -42,53 +43,20 @@ salt_grams_to_tbsp = lambda grams: round(
                                         )
 
 def basic_country(loaves = 2, hydration = 75, sugar=True):
-    print ("Ingredient\t\tQuantity\tPercentage")
-    print ("----------\t\t--------\t----------")
-    print_ingredient(
-                        "Water (80F)",
-                        water_grams_to_cup(375*loaves),
-                        hydration,
-                        "cups"
-                    )
-    print_ingredient(
-                        "Leaven",
-                        leaven_grams_to_cup(100*loaves),
-                        20,
-                        "cups"
-                    )
-    print_ingredient(
-                        "White Flour",
-                        flour_grams_to_cup(450*loaves,BREAD_FLOUR),
-                        90,
-                        "cups"
-                    )
-    print_ingredient(
-                        "Whole Wheat Flour",
-                        flour_grams_to_cup(50*loaves,WHOLE_WHEAT),
-                        10,
-                        "cups"
-                    )
-    print_ingredient(
-                        "Salt",
-                        salt_grams_to_tbsp(10*loaves),
-                        2,
-                        "Tbsp"
-                    )
-    if sugar:
-            print_ingredient(
-                        "Sugar",
-                        (.5*loaves),
-                        "Tbsp"
-                    )
+    table = [
+                ["Water (80F)", "{} cups".format(water_grams_to_cup(375*loaves)), "{:.0F}%".format(hydration)],
+                [ "Leaven", "{} cups".format(leaven_grams_to_cup(100*loaves)),"20%" ],
+                [ "White Flour","{} cups".format(flour_grams_to_cup(450*loaves,BREAD_FLOUR)),"90%" ],
+                [ "Whole Wheat Flour","{} cups".format(flour_grams_to_cup(50*loaves,WHOLE_WHEAT)),"10%" ],
+                [ "Salt", "{} Tbsp".format(salt_grams_to_tbsp(loaves * 10)),"2%" ]
+            ]
 
-def print_ingredient(name, quantity, percentage,measurement):
-    print ("{n}\t\t{q} {m}\t{p}%".format(
-            n = name,
-            q = quantity,
-            p = percentage,
-            m = measurement
-            )
-        )
+    if sugar:
+        table.append(["Sugar", "{} Tbsp".format(.5*loaves)])
+
+    print ("Recipe for {l:.0F} loaves of Basic Country Bread:\n".format(l = loaves))
+    print (tabulate(table, headers = ["Ingredient", "Quantity", "%"]))
+
 
 if __name__ == "__main__":
     opts = docopt(doc, help=True, version="0.1")
