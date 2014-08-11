@@ -1,3 +1,2 @@
-breadplan
 docopt>=0.6.2
 tabulate>=0.7
