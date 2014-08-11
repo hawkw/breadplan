@@ -57,10 +57,27 @@ def basic_country(loaves = 2, hydration = 75, sugar=True):
     print ("Recipe for {l:.0F} loaves of Basic Country Bread:\n".format(l = loaves))
     print (tabulate(table, headers = ["Ingredient", "Quantity", "%"]))
 
+def whole_wheat(loaves = 2, hydration = 80, sugar=True):
+    table = [
+                ["Water (80F)", "{} cups".format(water_grams_to_cup(400*loaves)), "{:.0F}%".format(hydration)],
+                [ "Leaven", "{} cups".format(leaven_grams_to_cup(100*loaves)),"20%" ],
+                [ "Whole Wheat Flour","{} cups".format(flour_grams_to_cup(450*loaves,WHOLE_WHEAT)),"70%" ],
+                [ "All Purpose Flour","{} cups".format(flour_grams_to_cup(50*loaves,ALL_PURPOSE)),"30%" ],
+                [ "Salt", "{} Tbsp".format(salt_grams_to_tbsp(loaves * 10)),"2%" ]
+            ]
+
+    if sugar:
+        table.append(["Sugar", "{} Tbsp".format(.5*loaves)])
+
+    print ("Recipe for {l:.0F} loaves of Whole Wheat Bread:\n".format(l = loaves))
+    print (tabulate(table, headers = ["Ingredient", "Quantity", "%"]))
+
 
 if __name__ == "__main__":
     opts = docopt(doc, help=True, version="0.1")
     if opts["basic"]:
         basic_country(float(opts["--loaves"]), float(opts["--hydration"]), opts["--sugar"])
+    elif opts["wholewheat"]:
+       whole_wheat(float(opts["--loaves"]), float(opts["--hydration"]), opts["--sugar"])
     else:
         print ("Sorry, breads other than the Basic Country Bread are not currently supported")
