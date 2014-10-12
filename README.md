@@ -10,7 +10,7 @@ I wrote this script primarily for my own personal use, but if any of my fellow b
 Installation/Contents
 ---------------------
 
-The script is `breadplan.py`. There are a couple dependencies (`docopt` and `tabulate`), which you can install using `pip install -r requirements.txt`. `Breadplan Science.ipynb` contains the IPython notebook I used to do a little stats to get average density values for assorted flours.
+The script is `breadplan.py`. There are a couple dependencies (`docopt` and `tabulate`), which you can install using `pip install -r requirements.txt`. [`Breadplan Science.ipynb`](http://nbviewer.ipython.org/github/hawkw/breadplan/blob/master/Breadplan%20Science.ipynb) contains the IPython notebook I used to do a little stats to get average density values for assorted flours.
 
 
 Usage
