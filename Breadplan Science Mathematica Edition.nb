@@ -10,15 +10,31 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6109,        202]
-NotebookOptionsPosition[      5377,        171]
-NotebookOutlinePosition[      5735,        187]
-CellTagsIndexPosition[      5692,        184]
+NotebookDataLength[     11450,        376]
+NotebookOptionsPosition[      9846,        312]
+NotebookOutlinePosition[     10204,        328]
+CellTagsIndexPosition[     10161,        325]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
-Cell[BoxData[
+
+Cell[CellGroupData[{
+Cell["Breadplan Math!", "Title",
+ CellChangeTimes->{{3.6463160083229647`*^9, 3.646316011721896*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Function definitions", "Section",
+ CellChangeTimes->{{3.6463155893157597`*^9, 3.646315592027062*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Percent", "::", "usage"}], " ", "=", " ", 
+  "\"\<Percent[part, whole] gives part expressed as a percentage of \
+whole.\>\""}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Percent", "[", 
    RowBox[{"part_", ",", " ", "whole_"}], "]"}], " ", ":=", " ", 
@@ -26,11 +42,23 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"(", 
     RowBox[{"part", " ", "*", " ", "whole"}], ")"}], " ", "/", " ", 
-   "100"}]}]], "Input",
+   "100"}]}]}], "Input",
  CellChangeTimes->{{3.64631492961555*^9, 3.6463149316207314`*^9}, {
-  3.6463150223362494`*^9, 3.646315042437605*^9}}],
+  3.6463150223362494`*^9, 3.646315042437605*^9}, {3.646315391334139*^9, 
+  3.646315419691659*^9}, {3.646315509320397*^9, 3.6463155145199957`*^9}}],
 
-Cell[BoxData[
+Cell[BoxData["\<\"Percent[part, whole] gives part expressed as a percentage \
+of whole.\"\>"], "Output",
+ CellChangeTimes->{3.646315449608098*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ImproperForm", "::", "usage"}], " ", "=", " ", 
+  "\"\<ImproperForm[x] gives x expressed as a mixed number.\>\""}], "\
+\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"ImproperForm", "[", "x_", "]"}], ":=", "\[IndentingNewLine]", 
   RowBox[{
@@ -45,8 +73,119 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"Floor", "[", "x", "]"}], ",", 
      RowBox[{"x", "-", 
-      RowBox[{"Floor", "[", "x", "]"}]}]}], "}"}]}]}]], "Input",
- CellChangeTimes->{{3.646315034024534*^9, 3.646315038999302*^9}}],
+      RowBox[{"Floor", "[", "x", "]"}]}]}], "}"}]}]}]}], "Input",
+ CellChangeTimes->{{3.646315034024534*^9, 3.646315038999302*^9}, {
+  3.646315426469733*^9, 3.64631544383843*^9}}],
+
+Cell[BoxData["\<\"ImproperForm[x] gives x expressed as a mixed number.\"\>"], \
+"Output",
+ CellChangeTimes->{3.646315444617776*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Flours", "Section",
+ CellChangeTimes->{{3.646315690555648*^9, 3.646315691826556*^9}}],
+
+Cell["Let\[CloseCurlyQuote]s see what Wolfram Alpha has to say about \
+flour...", "Text",
+ CellChangeTimes->{{3.646315881818947*^9, 3.6463158887221947`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wholeWheatMass", " ", "=", " ", 
+  RowBox[{"WolframAlpha", "[", 
+   RowBox[{
+   "\"\<mass of 1 cup of whole-wheat flour in grams\>\"", ",", " ", 
+    "\"\<Result\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6463157710365477`*^9, 3.646315786394751*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"120"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", "\"g\""}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: grams"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"Grams\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.6463157910605497`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"breadMass", " ", "=", " ", 
+  RowBox[{"WolframAlpha", "[", 
+   RowBox[{
+   "\"\<mass of 1 cup of bread flour in grams\>\"", ",", " ", 
+    "\"\<Result\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6463158050518913`*^9, 3.646315807858844*^9}, {
+  3.6463158390786*^9, 3.646315840866934*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"120"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", "\"g\""}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: grams"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"Grams\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.64631584522554*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"allPurposeMass", " ", "=", " ", 
+  RowBox[{"WolframAlpha", "[", 
+   RowBox[{
+   "\"\<mass of 1 cup of all-purpose flour in grams\>\"", ",", " ", 
+    "\"\<Result\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.646315855179104*^9, 3.646315871842639*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{"138"},
+  "QuantityUnit",
+  DisplayFunction->(TooltipBox[
+    StyleBox[
+     RowBox[{#, "\[InvisibleSpace]", 
+       StyleBox[
+        RowBox[{" ", "\"g\""}], "QuantityUnitTraditionalLabel"]}], 
+     ShowStringCharacters -> False], "Unit: grams"]& ),
+  InterpretationFunction->(RowBox[{"Quantity", "[", 
+     RowBox[{#, ",", "\"Grams\""}], "]"}]& )]], "Output",
+ CellChangeTimes->{3.646315875648291*^9}]
+}, Open  ]],
+
+Cell["\<\
+It looks like the measurements from Wolfram Alpha are unfortunately not quite \
+as precise as I\[CloseCurlyQuote]d like. We\[CloseCurlyQuote]ll use the \
+measurements from flour providers that I used in the IPython notebook, \
+instead.\
+\>", "Text",
+ CellChangeTimes->{{3.646315949307482*^9, 3.6463159823062963`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Eggs", "Section",
+ CellChangeTimes->{{3.6463156083716793`*^9, 3.646315619603614*^9}}],
+
+Cell["\<\
+We will be using the USDA \
+\[OpenCurlyDoubleQuote]large\[CloseCurlyDoubleQuote] egg average mass. \
+Obviously, this is a localization issue that ought to be addressed later.\
+\>", "Text",
+ CellChangeTimes->{{3.6463156252596397`*^9, 3.646315627730784*^9}, {
+  3.646315658283613*^9, 3.646315681170491*^9}}],
 
 Cell[CellGroupData[{
 
@@ -168,6 +307,8 @@ Cell[BoxData[
   HoldForm]], "Output",
  CellChangeTimes->{3.646315072482298*^9}]
 }, Open  ]]
+}, Open  ]]
+}, Open  ]]
 },
 WindowSize->{645, 629},
 WindowMargins->{{Automatic, 387}, {Automatic, 61}},
@@ -186,27 +327,59 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 381, 10, 46, "Input"],
-Cell[942, 32, 570, 16, 63, "Input"],
 Cell[CellGroupData[{
-Cell[1537, 52, 254, 5, 28, "Input"],
-Cell[1794, 59, 551, 15, 32, "Output"]
+Cell[580, 22, 100, 1, 92, "Title"],
+Cell[CellGroupData[{
+Cell[705, 27, 107, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[837, 32, 653, 15, 97, "Input"],
+Cell[1493, 49, 146, 2, 46, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2382, 79, 261, 5, 28, "Input"],
-Cell[2646, 86, 572, 15, 48, "Output"]
+Cell[1676, 56, 783, 21, 97, "Input"],
+Cell[2462, 79, 131, 2, 28, "Output"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3255, 106, 189, 3, 28, "Input"],
-Cell[3447, 111, 575, 15, 48, "Output"]
+Cell[2642, 87, 91, 1, 64, "Section"],
+Cell[2736, 90, 157, 2, 30, "Text"],
+Cell[CellGroupData[{
+Cell[2918, 96, 280, 6, 63, "Input"],
+Cell[3201, 104, 433, 11, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4059, 131, 190, 3, 28, "Input"],
-Cell[4252, 136, 1109, 32, 82, "Output"]
+Cell[3671, 120, 316, 7, 46, "Input"],
+Cell[3990, 129, 430, 11, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4457, 145, 278, 6, 63, "Input"],
+Cell[4738, 153, 431, 11, 28, "Output"]
+}, Open  ]],
+Cell[5184, 167, 327, 6, 68, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5548, 178, 91, 1, 64, "Section"],
+Cell[5642, 181, 315, 6, 49, "Text"],
+Cell[CellGroupData[{
+Cell[5982, 191, 254, 5, 28, "Input"],
+Cell[6239, 198, 551, 15, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6827, 218, 261, 5, 28, "Input"],
+Cell[7091, 225, 572, 15, 48, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7700, 245, 189, 3, 28, "Input"],
+Cell[7892, 250, 575, 15, 48, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8504, 270, 190, 3, 28, "Input"],
+Cell[8697, 275, 1109, 32, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }
 ]
 *)
 
 (* End of internal cache information *)
-
